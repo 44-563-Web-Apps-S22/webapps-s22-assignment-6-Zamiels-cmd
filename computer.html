@@ -23,6 +23,15 @@
     <label for="cellt">Cell service</label></br>
 
     <input type="button" onclick="orderComputer()" value="Order a computer">
+    <br>
+    <br>
+    <label for="name">Enter a property name</label>
+    <input type="text" name="name" id="name" value="engraved"></br>
+    
+    <label for="value">Enter value</label>
+    <input type="text" name="value" id="value">
+    <br>
+    <input type="button" value="Update the computer" onclick="updateComputer()">
   </form>
       
 
@@ -32,12 +41,20 @@
 <script> 
 
 var my_computer={}
+function updateComputer(){
+  my_computer.name=document.getElementById("name").value
+  my_computer.value=document.getElementById("value").value
+  
+  document.getElementById("result").innerHTML=JSON.stringify(my_computer)
+}
+
 function orderComputer(){
+  my_computer={}
   my_computer.extra=document.getElementById("mem").checked
   my_computer.mouse=document.getElementById("mouse").checked
   my_computer.cell=document.getElementById("cell").checked
 
-  document.getElementById("result").innerHTML=my_computer
+  document.getElementById("result").innerHTML=JSON.stringify(my_computer)
 }
 
 function resolveCheck() {
