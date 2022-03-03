@@ -22,19 +22,19 @@
       </form>
       
       <form>
-        <input type="checkbox" id="cb1_cheese" name="topping1"   
-          value="cheese" checked>
-        <label for="cb1_cheese">I want cheese</label></br>
+        <input type="checkbox" id="times" name="times"   
+          value="times" checked>
+        <label for="times">*</label></br>
       
-        <input type="checkbox" id="cb1_olive" name="topping2" 
-           value="olive">
-        <label for="cb1_olive">I want olives</label></br>
+        <input type="checkbox" id="divide" name="divide" 
+           value="divide">
+        <label for="divide">/</label></br>
       
-        <input type="checkbox" id="cb1_onion" name="topping3"   
-           value="onion" checked>
-        <label for="cb1_onion">I want onions</label></br>
+        <input type="checkbox" id="exponent" name="exponent"   
+           value="exponent" checked>
+        <label for="exponent">**</label></br>
 
-        <input type="button" onclick="resolveCheck()" value="Get values from check boxes">
+        <input type="button" onclick="chooseOp()" value="Get values from check boxes">
       </form>
       
 
@@ -42,6 +42,11 @@
 <p id="result">This text will be replaced </p>
 
 <script> 
+
+function chooseOp(){
+  divide
+}
+
 function resolveCheck() {
     console.log("Getting input")
     cheese = document.getElementById("cb1_cheese").checked

@@ -10,19 +10,19 @@
 <h2>Getting input with radio buttons and checkboxes</h2>
       
   <form>
-    <input type="checkbox" id="times" name="times"   
-      value="times" checked>
-    <label for="times">*</label></br>
+    <input type="checkbox" id="mem" name="mem"   
+      value="extra" checked>
+    <label for="mem">Extra memory</label></br>
   
-    <input type="checkbox" id="divide" name="divide" 
-        value="divide">
-    <label for="divide">/</label></br>
+    <input type="checkbox" id="mouse" name="mouse" 
+        value="mouse">
+    <label for="mouse">Mouse</label></br>
   
-    <input type="checkbox" id="exponent" name="exponent"   
-        value="exponent" checked>
-    <label for="exponent">**</label></br>
+    <input type="checkbox" id="cell" name="cell"   
+        value="cell">
+    <label for="cellt">Cell service</label></br>
 
-    <input type="button" onclick="chooseOp()" value="Get values from check boxes">
+    <input type="button" onclick="orderComputer()" value="Order a computer">
   </form>
       
 
@@ -31,8 +31,13 @@
 
 <script> 
 
-function chooseOp(){
-  divide
+var my_computer={}
+function orderComputer(){
+  my_computer.extra=document.getElementById("mem").checked
+  my_computer.mouse=document.getElementById("mouse").checked
+  my_computer.cell=document.getElementById("cell").checked
+
+  document.getElementById("result").innerHTML=my_computer
 }
 
 function resolveCheck() {
