@@ -9,6 +9,20 @@
 <h1>David Angelo computes tips</h1>
 
 <h2>Getting input</h2>
+  
+
+    <input onclick="chooseOp('times')" type="radio" id="times" name="op"   
+      value="times" checked>
+    <label for="times">*</label></br>
+  
+    <input onclick="chooseOp('divide')" type="radio" id="divide" name="op" 
+       value="divide">
+    <label for="divide">/</label></br>
+  
+    <input onclick="chooseOp('exponent')" type="radio" id="exponent" name="op"   
+       value="exponent">
+    <label for="exponent">**</label></br>
+
 
 <form>
     <label for="check">Enter a check amount </label>
@@ -23,29 +37,39 @@
 
 <p id="result">result</p>
 
+
+
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
+var operation="times"
+
+function chooseOp(operator){
+    operation=operator
 }
 
 function tips(){
     check=document.getElementById("check").value
     tip=document.getElementById("tip").value
     result="Tip amounts by increase of "+tip+" are "
-    for (let i = 0; i < 10; i++) {
-       result+= (String)(Math.round((i*tip+.1)*check*100)/100)+" "
-        
+    switch(operation){
+        case "times":
+            for (let i = 0; i < 10; i++) {
+            result+= (String)(Math.round((i*tip+.1)*check*100)/100)+" "
+                
+            }
+            break
+        case "divide":
+            for (let i = 0; i < 10; i++) {
+            result+= (String)(Math.round(check/(i*tip+.1)*100)/100)+" "
+                
+            }
+            break
+        case "exponent":
+            for (let i = 0; i < 10; i++) {
+            result+= (String)(Math.round(check**(i*tip+.1)*100)/100)+" "
+                
+            }
+            break
     }
     document.getElementById("result").innerHTML=result
 

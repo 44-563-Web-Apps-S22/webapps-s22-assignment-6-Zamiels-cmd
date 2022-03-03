@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>computer</title>
+  </head>
+ 
+<body>
+<h1>David Angelo orders a computer</h1>
+
+<h2>Getting input with radio buttons and checkboxes</h2>
+      
+  <form>
+    <input type="checkbox" id="times" name="times"   
+      value="times" checked>
+    <label for="times">*</label></br>
+  
+    <input type="checkbox" id="divide" name="divide" 
+        value="divide">
+    <label for="divide">/</label></br>
+  
+    <input type="checkbox" id="exponent" name="exponent"   
+        value="exponent" checked>
+    <label for="exponent">**</label></br>
+
+    <input type="button" onclick="chooseOp()" value="Get values from check boxes">
+  </form>
+      
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function chooseOp(){
+  divide
+}
+
+function resolveCheck() {
+    console.log("Getting input")
+    cheese = document.getElementById("cb1_cheese").checked
+    olives = document.getElementById("cb1_olive").checked
+    onions = document.getElementById("cb1_onion").checked
+    confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+function resolveRadio() {
+    console.log("Getting input")
+    redOpt = document.getElementById("rg1_red").checked
+    blueOpt = document.getElementById("rg1_blue").checked
+    greenOpt = document.getElementById("rg1_green").checked
+    confirmed = confirm("Are these the values? "+redOpt+" and "+blueOpt+" and "+greenOpt)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+</script>
+
+</body>
+</html> 
