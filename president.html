@@ -4,7 +4,7 @@
     <title>President</title>
 </head>
  
-<body>
+<body style="margin: 1in;">
     <h1>President guess by David Angelo</h1>
 
 <h2>Getting input</h2>
@@ -22,11 +22,20 @@
 
 <p id="result">This text will be replaced </p>
 
+<div>
+    <img id="clickableImage" onclick="swapimage()" src="albatross.jpg" alt="albatross" height="100" width="100">
+</div>
+
+
+
+
+
+
 <script> 
 var correct=0
 var wrong=0
 
-function checkGuess (){
+function checkGuess(){
     console.log("Getting form values")
     president = document.getElementById("president").value
     guess = document.getElementById("guess").value
@@ -40,6 +49,16 @@ function checkGuess (){
         wrong++
     }
     out.innerHTML="Number of times wrong: "+wrong+"<br>Number of times correct: "+correct
+}
+
+var useImage=0
+const IMAGES=["albatross.jpg","lorikeet.jpg","night_hawk.jpg"]
+const NUM_IMAGES=IMAGES.length
+
+function swapimage(){
+    useImage=(useImage+1)%NUM_IMAGES
+    document.getElementById("clickableImage").src=IMAGES[useImage]
+    
 }
 </script>
 
